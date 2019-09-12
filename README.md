@@ -31,19 +31,19 @@
 
 ## CRUD API
 
-### Create (POST)
-app.post('/api/rooms/:id)
+#### Create (POST)
+app.post('/api/rooms/:id) \n
 app.post('/api/nearbyPlaces/')
 
-### Read (GET)
-app.get('/api/rooms/:id)
-app.get('/api/nearbyPlaces/:id')
+#### Read (GET)
+app.get('/api/rooms/:id) \n
+app.get('/api/nearbyPlaces/:id') \n
 app.get('/api/savedlist')
 
-### Update (UPDATE)
+#### Update (UPDATE)
 app.put('/api/nearbyPlaces/:id')
 
-### Delete (DELETE)
+#### Delete (DELETE)
 app.delete('/api/nearbyPlaces/:id')
 
 
