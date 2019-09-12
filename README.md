@@ -30,19 +30,20 @@
 - npm run start:dev
 
 ## CRUD API
-# Create (POST)
+
+### Create (POST)
 app.post('/api/rooms/:id)
 app.post('/api/nearbyPlaces/')
 
-# Read (GET)
+### Read (GET)
 app.get('/api/rooms/:id)
 app.get('/api/nearbyPlaces/:id')
 app.get('/api/savedlist')
 
-# Update (UPDATE)
+### Update (UPDATE)
 app.put('/api/nearbyPlaces/:id')
 
-# Delete (DELETE)
+### Delete (DELETE)
 app.delete('/api/nearbyPlaces/:id')
 
 
