@@ -32,12 +32,15 @@
 ## CRUD API
 
 #### Create (POST)
-app.post('/api/rooms/:id) \n
+app.post('/api/rooms/:id)
+
 app.post('/api/nearbyPlaces/')
 
 #### Read (GET)
-app.get('/api/rooms/:id) \n
-app.get('/api/nearbyPlaces/:id') \n
+app.get('/api/rooms/:id) 
+
+app.get('/api/nearbyPlaces/:id') 
+
 app.get('/api/savedlist')
 
 #### Update (UPDATE)
