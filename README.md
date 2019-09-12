@@ -29,6 +29,25 @@
 - npm run build:dev
 - npm run start:dev
 
+## CRUD API
+# Create (POST)
+app.post('/api/rooms/:id)
+app.post('/api/nearbyPlaces/')
+
+# Read (GET)
+app.get('/api/rooms/:id)
+app.get('/api/nearbyPlaces/:id')
+app.get('/api/savedlist')
+
+# Update (UPDATE)
+app.put('/api/nearbyPlaces/:id')
+
+# Delete (DELETE)
+app.delete('/api/nearbyPlaces/:id')
+
+
+
+
 ### Installing Dependencies
 
 From within the root directory:
