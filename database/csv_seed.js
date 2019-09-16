@@ -42,7 +42,6 @@ async function generateUsersData() {
         });
     }
   }
-  writer.end();
   console.log('successfully seeded users');
 }
 
@@ -98,7 +97,6 @@ async function generateListingsData() {
         });
     }
   }
-  writer.end();
   console.log('successfully seeded listings');
 }
 
@@ -129,7 +127,6 @@ async function generateFavoritesData() {
         });
     }
   }
-  writer.end();
   console.log('successfully seeded favorites');
 }
 
@@ -146,7 +143,7 @@ async function generateSavedListData() {
     };
 
     if (counter % 100000 === 0) {
-      console.log('users: ', counter);
+      console.log('savedList: ', counter);
     }
     counter += 1;
 
@@ -161,8 +158,8 @@ async function generateSavedListData() {
         });
     }
   }
-  writer.end();
   console.log('successfully seeded savedList');
+  writer.end();
 }
 
 generateUsersData();
