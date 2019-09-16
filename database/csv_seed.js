@@ -119,17 +119,17 @@ for (let i = 1; i <= 10000000; i += 1) {
 
 usersCsvWriter
   .writeRecords(usersArray)
-  .then(() => console.log(usersArray, 'The users CSV file was written successfully'));
+  .then(() => console.log('The users CSV file was written successfully'));
 
 
 listingsCsvWriter
   .writeRecords(listingsArray)
-  .then(() => console.log(listingsArray, 'The listings CSV file was written successfully'));
+  .then(() => console.log('The listings CSV file was written successfully'));
 
 favoritesCsvWriter
   .writeRecords(favoritesArray)
-  .then(() => console.log(favoritesArray, 'The favorites CSV file was written successfully'));
+  .then(() => console.log('The favorites CSV file was written successfully'));
 
 savedListCsvWriter
   .writeRecords(savedListArray)
-  .then(() => console.log(savedListArray, 'The savedList CSV file was written successfully'));
+  .then(() => console.log('The savedList CSV file was written successfully'));
