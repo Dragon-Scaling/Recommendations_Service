@@ -34,7 +34,7 @@ model.db.once('open', () => {
         plusVerified = false;
       }
 
-      // randomly choost savedList
+      // randomly choose savedList
       const savedList = fakeList.slice(Math.floor(Math.random() * 20));
 
       // generates a places data
