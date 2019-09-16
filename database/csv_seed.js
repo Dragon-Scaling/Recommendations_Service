@@ -32,9 +32,9 @@ const getRandomIntInclusive = (minimum, maximum) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-const numberOfListings = 1000;
-const numberOfUsers = 1000;
-const numberOfFavorites = 1000;
+const numberOfListings = 10000000;
+const numberOfUsers = 1000000;
+const numberOfFavorites = 5000000;
 
 const generateUsersData = (i) => {
   const user = [
@@ -77,6 +77,7 @@ const generateListingsData = (i) => {
   return listing;
 };
 
+
 const generateFavoritesData = (i) => {
   const favorite = [
     i,
@@ -96,22 +97,22 @@ const generateSavedListData = (i) => {
   return savedList;
 };
 
-for (let i = 1; i <= 1000; i += 1) {
+for (let i = 1; i <= 1000000; i += 1) {
   const user = generateUsersData(i);
   usersArray.push(user);
 }
 
-for (let i = 1; i <= 1000; i += 1) {
+for (let i = 1; i <= 10000000; i += 1) {
   const listing = generateListingsData(i);
   listingsArray.push(listing);
 }
 
-for (let i = 1; i <= 1000; i += 1) {
+for (let i = 1; i <= 5000000; i += 1) {
   const favorite = generateFavoritesData(i);
   favoritesArray.push(favorite);
 }
 
-for (let i = 1; i <= 1000; i += 1) {
+for (let i = 1; i <= 10000000; i += 1) {
   const savedlisting = generateSavedListData(i);
   savedListArray.push(savedlisting);
 }
