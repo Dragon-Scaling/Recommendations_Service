@@ -1,7 +1,10 @@
 const csvWriter = require('csv-write-stream');
 const fs = require('fs');
 
-const writer = csvWriter();
+// basicaly since you don't .end the writer the streams to all the files stay open
+// so every time you write to one file it writes to all previously opened files also
+// I think you can use an end but then you have to create a new writer after every end
+let writer = csvWriter();
 const faker = require('faker');
 
 const getRandomIntInclusive = (minimum, maximum) => {
@@ -42,6 +45,7 @@ async function generateUsersData() {
         });
     }
   }
+  writer.end();
   console.log('successfully seeded users');
 }
 
@@ -97,6 +101,7 @@ async function generateListingsData() {
         });
     }
   }
+  writer.end();
   console.log('successfully seeded listings');
 }
 
@@ -127,6 +132,7 @@ async function generateFavoritesData() {
         });
     }
   }
+  writer.end();
   console.log('successfully seeded favorites');
 }
 
@@ -162,7 +168,16 @@ async function generateSavedListData() {
   writer.end();
 }
 
-generateUsersData();
-generateListingsData();
-generateFavoritesData();
+// generateUsersData();
+// generateListingsData();
+// generateFavoritesData();
 generateSavedListData();
+
+// async function generateData() {
+//   await generateUsersData()
+//     .then(() => {
+//       writer.end()
+//       generateListingsData()
+//     }))
+//     .then()
+// }
