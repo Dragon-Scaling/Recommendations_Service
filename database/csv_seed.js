@@ -60,10 +60,11 @@ async function generateListingsData() {
     return false;
   };
   const randomCity = ['San Francisco', 'Sacramento', 'Napa', 'Oakland', 'Berkeley', 'San Jose'];
-  const randomNearby = [];
+  let randomNearby = [];
   for (let j = 0; j < getRandomIntInclusive(7, 10); j += 1) {
     randomNearby.push(getRandomIntInclusive(1, numberOfListings));
   }
+  // randomNearby = randomNearby.join();
   const randomPropertyType = ['Entire Apartment', 'Hotel Room', 'Private Room', 'Entire House', 'Entire Guest Suite', 'Shared Room'];
 
   for (let i = 1; i <= 10000000; i += 1) {
@@ -79,7 +80,7 @@ async function generateListingsData() {
       price: getRandomIntInclusive(40, 500),
       averageReview: Math.random() + 4,
       totalReviews: Math.floor(Math.random() * 100 + 100),
-      nearby: randomNearby,
+      nearby: `{${randomNearby}}`,
       about: faker.lorem.paragraphs(),
       theSpace: faker.lorem.paragraphs() + faker.lorem.paragraphs() + faker.lorem.paragraphs() + faker.lorem.paragraphs(),
       neighborhood: faker.lorem.paragraphs(),
@@ -169,9 +170,9 @@ async function generateSavedListData() {
 }
 
 // generateUsersData();
-// generateListingsData();
+generateListingsData();
 // generateFavoritesData();
-generateSavedListData();
+// generateSavedListData();
 
 // async function generateData() {
 //   await generateUsersData()
