@@ -32,19 +32,19 @@
 ## CRUD API
 
 #### Create (POST)
-app.post('/api/:username/favorites/') 
+app.post('/api/user/:id/favorites') 
 
 #### Read (GET)
 
 app.get('/api/listing/:id'/nearby-listings') 
 
-app.get('/api/:username/savedlist')
+app.get('/api/user/:id/savedlist')
 
 #### Update (UPDATE)
-app.put('/api/:username/favorites/:id')
+app.put('/api/user/:id/favorites/:id')
 
 #### Delete (DELETE)
-app.delete('/api/:username/favorites/:id')
+app.delete('/api/user/:id/favorites/:id')
 
 
 

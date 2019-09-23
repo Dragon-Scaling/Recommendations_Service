@@ -1,9 +1,6 @@
 const csvWriter = require('csv-write-stream');
 const fs = require('fs');
 
-// basicaly since you don't .end the writer the streams to all the files stay open
-// so every time you write to one file it writes to all previously opened files also
-// I think you can use an end but then you have to create a new writer after every end
 let writer = csvWriter();
 const faker = require('faker');
 
@@ -60,18 +57,17 @@ async function generateListingsData() {
     return false;
   };
   const randomCity = ['San Francisco', 'Sacramento', 'Napa', 'Oakland', 'Berkeley', 'San Jose'];
-  let randomNearby = [];
-  for (let j = 0; j < getRandomIntInclusive(7, 10); j += 1) {
-    randomNearby.push(getRandomIntInclusive(1, numberOfListings));
-  }
-  // randomNearby = randomNearby.join();
   const randomPropertyType = ['Entire Apartment', 'Hotel Room', 'Private Room', 'Entire House', 'Entire Guest Suite', 'Shared Room'];
 
   for (let i = 1; i <= 10000000; i += 1) {
+    const randomNearby = [];
+    for (let j = 0; j < getRandomIntInclusive(7, 10); j += 1) {
+      randomNearby.push(getRandomIntInclusive(1, numberOfListings));
+    }
     const listings = {
       id: i,
       url: `https://mock-property-images.s3-us-west-1.amazonaws.com/houses/house-${getRandomIntInclusive(1, 100)}.jpeg`,
-      title: faker.lorem.sentence(),
+      title: faker.lorem.words(),
       city: randomCity[getRandomIntInclusive(0, 5)],
       state: 'CA',
       country: 'US',
@@ -81,9 +77,9 @@ async function generateListingsData() {
       averageReview: Math.random() + 4,
       totalReviews: Math.floor(Math.random() * 100 + 100),
       nearby: `{${randomNearby}}`,
-      about: faker.lorem.paragraphs(),
-      theSpace: faker.lorem.paragraphs() + faker.lorem.paragraphs() + faker.lorem.paragraphs() + faker.lorem.paragraphs(),
-      neighborhood: faker.lorem.paragraphs(),
+      about: faker.lorem.words(),
+      theSpace: faker.lorem.words(),
+      neighborhood: faker.lorem.words(),
     };
 
     if (counter % 100000 === 0) {

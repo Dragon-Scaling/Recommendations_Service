@@ -63,3 +63,15 @@ typings/
 # bundled js
 aws-keys.json
 yarn.lock
+
+#csv files
+favorites.csv
+listings.csv
+saved_list.csv
+users_list.csv
+
+#New Relic license key
+newrelic.js
+
+#redis
+redis-5.0.5
