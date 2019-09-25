@@ -21,12 +21,15 @@ const PlaceList = () => {
     const splitUrl = document.URL.split('/');
     const i = splitUrl.indexOf('listing');
     const id = splitUrl[i + 1];
-    const url = `/api/nearbyPlaces/${id}`;
+    // const url = `/api/nearbyPlaces/${id}`;
+    const url = `http://localhost:3004/api/listing/${id}/nearby-listings`;
     axios(url)
       .then((response) => response.data)
       .then((fetchedPlaces) => {
+        console.log(fetchedPlaces);
         setPlaces(fetchedPlaces);
-      });
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   const next = () => {

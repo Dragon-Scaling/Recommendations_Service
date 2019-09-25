@@ -1,23 +1,24 @@
 require('newrelic');
-const redis = require('redis');
+// const redis = require('redis');
 const express = require('express');
 const cors = require('cors');
 const controller = require('./controller/controller.js');
 
-const cache = redis.createClient();
+// const cache = redis.createClient();
 
 const port = 3004;
 const app = express();
 
-cache.on("error", function (err) {
-  console.log("Error " + err);
-});
+// cache.on("error", function (err) {
+//   console.log("Error " + err);
+// });
 
 
 // app.use(require('morgan')('dev'));
 
 app.use(cors());
 app.use(express.static('public'));
+app.use('/listing/:id', express.static('public'));
 // app.use('/api/listing/:id/nearby-listings', express.static('public'));
 
 // #### Read (GET)

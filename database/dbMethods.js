@@ -49,7 +49,28 @@ exports.findListing = (req, res, callback) => {
         if (err) {
           callback(err);
         } else {
-          callback(null, data.rows);
+          const processedData = data.rows.map(property => {
+            return {
+              savedList: [],
+              id: property.id,
+              url: property.url,
+              title: property.title,
+              city: property.city,
+              state: property.state,
+              country: property.country,
+              plusVerified: property.plusverified === 't' ? true : false,
+              propertyType: property.propertytype,
+              price: property.price,
+              averageReview: property.averagereview,
+              totalReviews: property.totalreviews,
+              nearby: property.nearby,
+              about: property.about,
+              theSpace: property.thespace,
+              neighborhood: property.neighborhood,
+            };
+          });
+          // callback(null, data.rows);
+          callback(null, processedData);
         }
       });
     }
