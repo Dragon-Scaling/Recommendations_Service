@@ -3,12 +3,12 @@ const { Pool } = require('pg');
 
 const pool = new Pool({
   user: '',
-  host: 'localhost',
+  host: 'ec2-54-183-105-134.us-west-1.compute.amazonaws.com',
   database: 'nearbylistingsdb',
   password: '',
   port: 5432,
 });
-  
+
 // pool.query('SELECT NOW()', (err, res) => {
 //   console.log(err, res);
 // });

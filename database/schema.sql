@@ -50,10 +50,36 @@ CREATE TABLE saved_list (
   favorites_id integer NOT NULL REFERENCES favorites(id)
 );
 
+-- CREATE TABLE saved_list (
+--   id serial PRIMARY KEY,
+--   users_list_id integer NOT NULL,
+--   listings_id integer NOT NULL,
+--   favorites_id integer NOT NULL 
+-- );
+
+-- ALTER TABLE saved_list
+-- ADD COLUMN users_list_id integer,
+-- ADD FOREIGN KEY (users_list_id) REFERENCES users_list (id);
+
+-- ALTER TABLE saved_list
+-- ADD COLUMN listings_id integer,
+-- ADD FOREIGN KEY (listings_id) REFERENCES listings (id);
+
+-- ALTER TABLE saved_list
+-- ADD FOREIGN KEY (listings_id) REFERENCES listings (id);
+
+-- ALTER TABLE saved_list
+-- ADD FOREIGN KEY (favorites_id) REFERENCES favorites (id);
+
+
 -- COPY users_list(id, username)
 COPY users_list
 FROM '/Users/pammyla/Documents/SDC/Recommendations_Service/users_list.csv' DELIMITER ',' CSV HEADER;
 
+-- psql -U postgres -d nearbylistingsdb -c "\COPY users_list FROM '/home/ec2-user/Recommendations_Service/users_list.csv' DELIMITER ',' CSV HEADER";
+-- psql -U postgres -d nearbylistingsdb -c "\COPY listings FROM '/home/ec2-user/Recommendations_Service/listings.csv' DELIMITER ',' CSV HEADER";
+-- psql -U postgres -d nearbylistingsdb -c "\COPY favorites FROM '/home/ec2-user/Recommendations_Service/favorites.csv' DELIMITER ',' CSV HEADER";
+-- psql -U postgres -d nearbylistingsdb -c "\COPY saved_list FROM '/home/ec2-user/Recommendations_Service/saved_list.csv' DELIMITER ',' CSV HEADER";
 
 -- COPY listings(id, url, title, city, state, country, plusVerified, propertyType, price, averageReview, totalReviews, nearby, about, theSpace, neighborhood)
 COPY listings

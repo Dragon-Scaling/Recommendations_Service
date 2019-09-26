@@ -75,3 +75,9 @@ newrelic.js
 
 #redis
 redis-5.0.5
+
+#SDC Server pem
+SDCServer.pem
+
+#SDC Database pem
+SDCDatabase.pem
