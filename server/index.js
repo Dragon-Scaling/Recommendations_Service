@@ -14,7 +14,7 @@ const app = express();
 // });
 
 
-//app.use(require('morgan')('dev'));
+app.use(require('morgan')('dev'));
 
 app.use(cors());
 app.use(express.static('public'));
