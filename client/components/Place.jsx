@@ -65,21 +65,21 @@ Place.defaultProps = {
   last: false,
 };
 
-Place.propTypes = {
-  first: PropTypes.bool,
-  last: PropTypes.bool,
-  place: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    plusVerified: PropTypes.bool.isRequired,
-    propertyType: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    totalReviews: PropTypes.number.isRequired,
-    averageReview: PropTypes.number.isRequired,
-    savedList: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  }),
-};
+// Place.propTypes = {
+//   first: PropTypes.bool,
+//   last: PropTypes.bool,
+//   place: PropTypes.shape({
+//     _id: PropTypes.string.isRequired,
+//     url: PropTypes.string.isRequired,
+//     plusVerified: PropTypes.bool.isRequired,
+//     propertyType: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     city: PropTypes.string.isRequired,
+//     price: PropTypes.number.isRequired,
+//     totalReviews: PropTypes.number.isRequired,
+//     averageReview: PropTypes.number.isRequired,
+//     savedList: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+//   }),
+// };
 
 export default Place;

@@ -14,11 +14,13 @@ const app = express();
 // });
 
 
-// app.use(require('morgan')('dev'));
+//app.use(require('morgan')('dev'));
 
 app.use(cors());
 app.use(express.static('public'));
 app.use('/listing/:id', express.static('public'));
+app.use('/', express.static('loader'));
+
 // app.use('/api/listing/:id/nearby-listings', express.static('public'));
 
 // #### Read (GET)

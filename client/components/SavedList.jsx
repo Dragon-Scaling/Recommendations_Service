@@ -25,7 +25,7 @@ const SavedList = () => {
   }, [Object.keys(currentPlace).length]);
 
   useEffect(() => {
-    axios('/api/savedList')
+    axios('/http://184.169.162.253:3004/api/savedList')
       .then((response) => {
         setSavedList(response.data);
       });
