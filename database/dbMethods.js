@@ -40,8 +40,6 @@ exports.findListing = (req, res, callback) => {
 
   pool.query(input, (error, results) => {
     if (error) {
-      console.log(error);
-      process.exit()
       callback(error);
     } else {
       // console.log('results:', results.rows[0].nearby);
@@ -49,8 +47,6 @@ exports.findListing = (req, res, callback) => {
       const joinQuery = `${generateQuery(array)}`;
       pool.query(joinQuery, (err, data) => {
         if (err) {
-	  console.log(error);
-	  process.exit()
           callback(err);
         } else {
           const processedData = data.rows.map(property => {
